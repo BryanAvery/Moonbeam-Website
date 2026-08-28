@@ -9,6 +9,10 @@
   const dialogTitle = document.getElementById('dialogTitle');
   const dialogDescription = document.getElementById('dialogDescription');
   const dialogClose = document.getElementById('dialogClose');
+  const characterDialog = document.getElementById('characterDialog');
+  const characterDialogTitle = document.getElementById('characterDialogTitle');
+  const characterDialogDescription = document.getElementById('characterDialogDescription');
+  const characterDialogClose = document.getElementById('characterDialogClose');
   const defaultBookDescription = 'This book card is ready to link to its own story page. We can add a synopsis, sample pages, gallery images and a purchase or enquiry button here.';
 
   // Current year in the footer.
@@ -112,6 +116,26 @@
     const outside = event.clientX < rect.left || event.clientX > rect.right ||
       event.clientY < rect.top || event.clientY > rect.bottom;
     if (outside) dialog.close();
+  });
+
+  // Character profile dialog.
+  document.querySelectorAll('.character-card').forEach(card => {
+    card.addEventListener('click', () => {
+      characterDialogTitle.textContent = card.dataset.characterName;
+      characterDialogDescription.textContent = card.dataset.characterDescription;
+      if (typeof characterDialog.showModal === 'function') {
+        characterDialog.showModal();
+      }
+    });
+  });
+
+  characterDialogClose.addEventListener('click', () => characterDialog.close());
+
+  characterDialog.addEventListener('click', event => {
+    const rect = characterDialog.getBoundingClientRect();
+    const outside = event.clientX < rect.left || event.clientX > rect.right ||
+      event.clientY < rect.top || event.clientY > rect.bottom;
+    if (outside) characterDialog.close();
   });
 
   // Close the mobile menu if the layout changes back to desktop.
