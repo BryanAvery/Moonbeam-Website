@@ -553,6 +553,56 @@
       margin-inline: auto;
     }
 
+    .characters-panel {
+      display: block;
+      text-align: center;
+    }
+
+    .characters-intro {
+      max-width: 780px !important;
+      margin-inline: auto !important;
+    }
+
+    .character-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 38px;
+    }
+
+    .character-card {
+      overflow: hidden;
+      border: 1px solid rgba(255, 211, 116, .42);
+      border-radius: var(--radius);
+      background: linear-gradient(160deg, rgba(7,43,93,.72), rgba(2,19,41,.92));
+      box-shadow: 0 16px 38px rgba(0, 0, 0, .28);
+      transition: transform .24s ease, border-color .24s ease, box-shadow .24s ease;
+    }
+
+    .character-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--gold-soft);
+      box-shadow: 0 22px 46px rgba(0, 0, 0, .36), 0 0 24px rgba(243, 181, 63, .12);
+    }
+
+    .character-card img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      transition: transform .45s ease;
+    }
+
+    .character-card:hover img { transform: scale(1.025); }
+
+    .character-card h3 {
+      margin: 0;
+      padding: 14px 12px 16px;
+      color: var(--gold-soft);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.45rem;
+      line-height: 1;
+    }
+
     .gallery-section {
       text-align: center;
     }
@@ -804,6 +854,7 @@
       .hero h1 { font-size: clamp(4.4rem, 17vw, 7rem); }
       .hero-description { margin-inline: auto; }
       .section-panel { grid-template-columns: 1fr; text-align: center; }
+      .character-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .news-grid { grid-template-columns: 1fr; }
       .news-card:last-child { grid-column: auto; }
       .gallery-grid { gap: 16px; }
@@ -825,6 +876,8 @@
       .news-card { padding: 24px 22px; }
       .gallery-grid { grid-template-columns: 1fr; margin-top: 28px; }
       .gallery-item::after { opacity: 1; transform: none; }
+      .character-grid { gap: 12px; margin-top: 28px; }
+      .character-card h3 { font-size: 1.25rem; padding-block: 12px 14px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -967,12 +1020,40 @@
 
       <section class="content-section" id="characters" data-section>
         <div class="container">
-          <div class="section-panel reveal">
-            <div>
-              <h2>Meet the Characters</h2>
-              <p>Moonbeam's world is full of dragons, friends and magical creatures, each with their own gifts, personalities and adventures. This section is ready for character portraits, short biographies and links to the books in which they appear.</p>
+          <div class="section-panel characters-panel reveal">
+            <h2>Meet the Characters</h2>
+            <p class="characters-intro">Moonbeam's world is full of dragons, friends and magical creatures, each with their own gifts, personalities and adventures.</p>
+
+            <div class="character-grid">
+              <article class="character-card">
+                <img src="assets/characters/Moonbeam.png" alt="Moonbeam, the magical stardust-breathing dragon" loading="lazy">
+                <h3>Moonbeam</h3>
+              </article>
+              <article class="character-card">
+                <img src="assets/characters/Blaze.png" alt="Blaze, the friendly fire-breathing dragon" loading="lazy">
+                <h3>Blaze</h3>
+              </article>
+              <article class="character-card">
+                <img src="assets/characters/willow.png" alt="Willow, the gentle mystical dragon healer" loading="lazy">
+                <h3>Willow</h3>
+              </article>
+              <article class="character-card">
+                <img src="assets/characters/flashwing.png" alt="Flashwing, Moonbeam's adventurous dragon friend" loading="lazy">
+                <h3>Flashwing</h3>
+              </article>
+              <article class="character-card">
+                <img src="assets/characters/shard.png" alt="Shard, the magical Ice Phoenix" loading="lazy">
+                <h3>Shard</h3>
+              </article>
+              <article class="character-card">
+                <img src="assets/characters/rainwing.png" alt="Rainwing, the dragon with colourful magical scales" loading="lazy">
+                <h3>Rainwing</h3>
+              </article>
+              <article class="character-card">
+                <img src="assets/characters/Midnight.png" alt="Midnight, the mysterious shadow dragon" loading="lazy">
+                <h3>Midnight</h3>
+              </article>
             </div>
-            <div class="moon-orb" aria-hidden="true"></div>
           </div>
         </div>
       </section>
