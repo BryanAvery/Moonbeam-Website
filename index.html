@@ -571,18 +571,25 @@
     }
 
     .character-card {
+      width: 100%;
+      padding: 0;
       overflow: hidden;
       border: 1px solid rgba(255, 211, 116, .42);
       border-radius: var(--radius);
       background: linear-gradient(160deg, rgba(7,43,93,.72), rgba(2,19,41,.92));
+      color: inherit;
+      cursor: pointer;
+      font: inherit;
       box-shadow: 0 16px 38px rgba(0, 0, 0, .28);
       transition: transform .24s ease, border-color .24s ease, box-shadow .24s ease;
     }
 
-    .character-card:hover {
+    .character-card:hover,
+    .character-card:focus-visible {
       transform: translateY(-5px);
       border-color: var(--gold-soft);
       box-shadow: 0 22px 46px rgba(0, 0, 0, .36), 0 0 24px rgba(243, 181, 63, .12);
+      outline: none;
     }
 
     .character-card img {
@@ -592,7 +599,8 @@
       transition: transform .45s ease;
     }
 
-    .character-card:hover img { transform: scale(1.025); }
+    .character-card:hover img,
+    .character-card:focus-visible img { transform: scale(1.025); }
 
     .character-card h3 {
       margin: 0;
@@ -1025,34 +1033,34 @@
             <p class="characters-intro">Moonbeam's world is full of dragons, friends and magical creatures, each with their own gifts, personalities and adventures.</p>
 
             <div class="character-grid">
-              <article class="character-card">
+              <button class="character-card" type="button" data-character-name="Moonbeam" data-character-description="A kind, curious dragon who breathes magical stardust instead of fire. Her stardust can light dark skies, calm danger, protect others and even help break dark magic. Moonbeam's greatest strengths are her courage, kindness and ability to bring friends together." aria-label="Meet Moonbeam">
                 <img src="assets/characters/Moonbeam.png" alt="Moonbeam, the magical stardust-breathing dragon" loading="lazy">
                 <h3>Moonbeam</h3>
-              </article>
-              <article class="character-card">
+              </button>
+              <button class="character-card" type="button" data-character-name="Blaze" data-character-description="A warm-hearted dragon who breathes shimmering, glittering fire. Blaze can light dark paths, burn away threatening storm clouds and use his fiery magic to protect his friends when danger appears." aria-label="Meet Blaze">
                 <img src="assets/characters/Blaze.png" alt="Blaze, the friendly fire-breathing dragon" loading="lazy">
                 <h3>Blaze</h3>
-              </article>
-              <article class="character-card">
+              </button>
+              <button class="character-card" type="button" data-character-name="Willow" data-character-description="A gentle and wise healer dragon with soothing green scales. Willow uses healing light and magical green mist to comfort others, restore their strength and keep her friends calm when things become frightening." aria-label="Meet Willow">
                 <img src="assets/characters/willow.png" alt="Willow, the gentle mystical dragon healer" loading="lazy">
                 <h3>Willow</h3>
-              </article>
-              <article class="character-card">
+              </button>
+              <button class="character-card" type="button" data-character-name="Flashwing" data-character-description="Moonbeam's adventurous old friend, recognisable by his shiny scarlet scales. Flashwing loves exploring caves, discovering treasures and setting off on quests. His speed can create powerful swirling winds, and he can also breathe fire when his friends need protecting." aria-label="Meet Flashwing">
                 <img src="assets/characters/flashwing.png" alt="Flashwing, Moonbeam's adventurous dragon friend" loading="lazy">
                 <h3>Flashwing</h3>
-              </article>
-              <article class="character-card">
+              </button>
+              <button class="character-card" type="button" data-character-name="Shard" data-character-description="Shard is actually an Ice Phoenix, rather than a dragon. Her feathers shimmer like crystalline snowflakes and she can create magical ice and snowfall. Her special Crystalline Healing magic brings calm, comfort and healing, while her icy powers can freeze dangerous paths and obstacles." aria-label="Meet Shard">
                 <img src="assets/characters/shard.png" alt="Shard, the magical Ice Phoenix" loading="lazy">
                 <h3>Shard</h3>
-              </article>
-              <article class="character-card">
+              </button>
+              <button class="character-card" type="button" data-character-name="Rainwing" data-character-description="A colourful dragon whose scales change colour with her emotions. Rainwing can camouflage herself by changing colours, create brilliant rainbows and surround others with a rainbow-like protective shield. Her rainbow magic becomes even stronger when combined with Moonbeam's stardust." aria-label="Meet Rainwing">
                 <img src="assets/characters/rainwing.png" alt="Rainwing, the dragon with colourful magical scales" loading="lazy">
                 <h3>Rainwing</h3>
-              </article>
-              <article class="character-card">
+              </button>
+              <button class="character-card" type="button" data-character-name="Midnight" data-character-description="A quiet Shadow Dragon with scales as dark as the night. Midnight can blend into darkness, move through shadows and travel without making a sound. His unusual abilities make him especially useful when the friends need to explore hidden or dark places." aria-label="Meet Midnight">
                 <img src="assets/characters/Midnight.png" alt="Midnight, the mysterious shadow dragon" loading="lazy">
                 <h3>Midnight</h3>
-              </article>
+              </button>
             </div>
           </div>
         </div>
@@ -1163,6 +1171,16 @@
     <div class="dialog-content">
       <h2 id="dialogTitle">Moonbeam</h2>
       <div class="dialog-description" id="dialogDescription"></div>
+    </div>
+  </dialog>
+
+  <dialog class="book-dialog" id="characterDialog" aria-labelledby="characterDialogTitle">
+    <button class="dialog-close" id="characterDialogClose" type="button" aria-label="Close character details">×</button>
+    <div class="dialog-content">
+      <h2 id="characterDialogTitle"></h2>
+      <div class="dialog-description">
+        <p id="characterDialogDescription"></p>
+      </div>
     </div>
   </dialog>
 
