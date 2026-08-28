@@ -510,7 +510,8 @@
     }
 
     .section-panel h2,
-    .simple-section h2 {
+    .simple-section h2,
+    .gallery-section h2 {
       margin: 0 0 12px;
       color: var(--cream);
       font-family: "Berkshire Swash", Georgia, serif;
@@ -519,7 +520,8 @@
     }
 
     .section-panel p,
-    .simple-section p {
+    .simple-section p,
+    .gallery-section p {
       margin: 0;
       max-width: 780px;
       color: var(--muted);
@@ -550,6 +552,75 @@
       max-width: 860px;
       margin-inline: auto;
     }
+
+    .gallery-section {
+      text-align: center;
+    }
+
+    .gallery-intro {
+      max-width: 720px;
+      margin-inline: auto !important;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 38px;
+      text-align: left;
+    }
+
+    .gallery-item {
+      position: relative;
+      display: block;
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+      border: 1px solid rgba(255, 211, 116, .42);
+      border-radius: var(--radius);
+      background: var(--navy-850);
+      box-shadow: 0 16px 38px rgba(0, 0, 0, .28);
+      transition: transform .24s ease, border-color .24s ease, box-shadow .24s ease;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .45s ease;
+    }
+
+    .gallery-item::after {
+      content: "View artwork  ↗";
+      position: absolute;
+      right: 16px;
+      bottom: 16px;
+      padding: 8px 12px;
+      border: 1px solid rgba(255, 212, 124, .55);
+      border-radius: 999px;
+      color: var(--cream);
+      background: rgba(2, 19, 41, .82);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity .24s ease, transform .24s ease;
+      backdrop-filter: blur(8px);
+    }
+
+    .gallery-item:hover,
+    .gallery-item:focus-visible {
+      transform: translateY(-4px);
+      border-color: var(--gold-soft);
+      box-shadow: 0 22px 46px rgba(0, 0, 0, .36), 0 0 24px rgba(243, 181, 63, .12);
+      outline: none;
+    }
+
+    .gallery-item:hover img,
+    .gallery-item:focus-visible img { transform: scale(1.035); }
+
+    .gallery-item:hover::after,
+    .gallery-item:focus-visible::after { opacity: 1; transform: none; }
 
     .news-section {
       max-width: 1180px;
@@ -735,6 +806,7 @@
       .section-panel { grid-template-columns: 1fr; text-align: center; }
       .news-grid { grid-template-columns: 1fr; }
       .news-card:last-child { grid-column: auto; }
+      .gallery-grid { gap: 16px; }
     }
 
     @media (max-width: 640px) {
@@ -751,6 +823,8 @@
       .hero-description { font-size: .96rem; }
       .news-grid { margin-top: 28px; }
       .news-card { padding: 24px 22px; }
+      .gallery-grid { grid-template-columns: 1fr; margin-top: 28px; }
+      .gallery-item::after { opacity: 1; transform: none; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -969,9 +1043,30 @@
       </section>
 
       <section class="content-section" id="gallery" data-section>
-        <div class="container simple-section reveal">
+        <div class="container gallery-section reveal">
           <h2>Gallery</h2>
-          <p>A future gallery can show full-page illustrations, character artwork and magical locations from across the Moonbeam stories.</p>
+          <p class="gallery-intro">Explore magical moments, unforgettable friends and enchanting places from across the world of Moonbeam.</p>
+
+          <div class="gallery-grid">
+            <a class="gallery-item" href="assets/gallery/Image1.png" target="_blank" rel="noopener" aria-label="View Moonbeam and her dragon friends beneath the stars at full size">
+              <img src="assets/gallery/Image1.png" alt="Moonbeam sharing stardust with her dragon friends in a moonlit forest" loading="lazy">
+            </a>
+            <a class="gallery-item" href="assets/gallery/Image2.png" target="_blank" rel="noopener" aria-label="View Moonbeam at the magical mountain cave at full size">
+              <img src="assets/gallery/Image2.png" alt="Moonbeam discovering a glowing magical cave high in the mountains" loading="lazy">
+            </a>
+            <a class="gallery-item" href="assets/gallery/image3.png" target="_blank" rel="noopener" aria-label="View Moonbeam meeting the shadow dragon at full size">
+              <img src="assets/gallery/image3.png" alt="Moonbeam greeting a shadow dragon in an enchanted moonlit forest" loading="lazy">
+            </a>
+            <a class="gallery-item" href="assets/gallery/image4.png" target="_blank" rel="noopener" aria-label="View the dragons gathering around the enchanted crystal at full size">
+              <img src="assets/gallery/image4.png" alt="Moonbeam and her dragon friends combining their magic around an enchanted crystal" loading="lazy">
+            </a>
+            <a class="gallery-item" href="assets/gallery/image5.png" target="_blank" rel="noopener" aria-label="View Moonbeam beneath the ocean at full size">
+              <img src="assets/gallery/image5.png" alt="Moonbeam meeting a dolphin in a colourful magical world beneath the ocean" loading="lazy">
+            </a>
+            <a class="gallery-item" href="assets/gallery/image6.png" target="_blank" rel="noopener" aria-label="View Moonbeam in the mysterious toy house at full size">
+              <img src="assets/gallery/image6.png" alt="Moonbeam surrounded by toys in a mysterious moonlit toy house" loading="lazy">
+            </a>
+          </div>
         </div>
       </section>
 
