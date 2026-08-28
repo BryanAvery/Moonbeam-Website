@@ -7,7 +7,9 @@
   const year = document.getElementById('year');
   const dialog = document.getElementById('bookDialog');
   const dialogTitle = document.getElementById('dialogTitle');
+  const dialogDescription = document.getElementById('dialogDescription');
   const dialogClose = document.getElementById('dialogClose');
+  const defaultBookDescription = 'This book card is ready to link to its own story page. We can add a synopsis, sample pages, gallery images and a purchase or enquiry button here.';
 
   // Current year in the footer.
   year.textContent = new Date().getFullYear();
@@ -91,6 +93,12 @@
     const cover = card.querySelector('.book-cover');
     cover.addEventListener('click', () => {
       dialogTitle.textContent = card.dataset.bookTitle;
+      const paragraphs = (card.dataset.bookDescription || defaultBookDescription).split('\n\n');
+      dialogDescription.replaceChildren(...paragraphs.map(text => {
+        const paragraph = document.createElement('p');
+        paragraph.textContent = text;
+        return paragraph;
+      }));
       if (typeof dialog.showModal === 'function') {
         dialog.showModal();
       }

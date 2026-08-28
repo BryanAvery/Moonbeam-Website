@@ -603,10 +603,14 @@
       font-weight: 400;
     }
 
-    .dialog-content p {
+    .dialog-description p {
       color: var(--muted);
       line-height: 1.65;
-      margin-bottom: 0;
+      margin: 0;
+    }
+
+    .dialog-description p + p {
+      margin-top: 1em;
     }
 
     .dialog-close {
@@ -755,7 +759,7 @@
           <p class="section-copy reveal">Six beautifully illustrated stories full of wonder, adventure and unforgettable characters.</p>
 
           <div class="book-grid">
-            <article class="book-card reveal" data-book-title="Moonbeam - Stardust Serenade">
+            <article class="book-card reveal" data-book-title="Moonbeam - Stardust Serenade" data-book-description="Moonbeam is no ordinary dragon - instead of breathing fire, she breathes magical stardust.&#10;&#10;When she discovers a village where the nights have become dark and starless, Moonbeam uses her special gift to fill the sky with shimmering light. Soon, the villagers are smiling again, and Moonbeam discovers her true purpose: spreading joy wherever her stardust shines.">
               <span class="book-number">1</span>
               <button class="book-cover" type="button" aria-label="Open Moonbeam - Stardust Serenade">
                 <img src="assets/book-1.jpg" alt="Moonbeam - Stardust Serenade book cover">
@@ -887,7 +891,7 @@
     <button class="dialog-close" id="dialogClose" type="button" aria-label="Close">×</button>
     <div class="dialog-content">
       <h2 id="dialogTitle">Moonbeam</h2>
-      <p>This book card is ready to link to its own story page. We can add a synopsis, sample pages, gallery images and a purchase or enquiry button here.</p>
+      <div class="dialog-description" id="dialogDescription"></div>
     </div>
   </dialog>
 
