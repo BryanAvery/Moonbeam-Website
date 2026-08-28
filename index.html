@@ -647,25 +647,6 @@
       transition: transform .45s ease;
     }
 
-    .gallery-item::after {
-      content: "View artwork  ↗";
-      position: absolute;
-      right: 16px;
-      bottom: 16px;
-      padding: 8px 12px;
-      border: 1px solid rgba(255, 212, 124, .55);
-      border-radius: 999px;
-      color: var(--cream);
-      background: rgba(2, 19, 41, .82);
-      font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: 1rem;
-      font-weight: 700;
-      opacity: 0;
-      transform: translateY(6px);
-      transition: opacity .24s ease, transform .24s ease;
-      backdrop-filter: blur(8px);
-    }
-
     .gallery-item:hover,
     .gallery-item:focus-visible {
       transform: translateY(-4px);
@@ -676,9 +657,6 @@
 
     .gallery-item:hover img,
     .gallery-item:focus-visible img { transform: scale(1.035); }
-
-    .gallery-item:hover::after,
-    .gallery-item:focus-visible::after { opacity: 1; transform: none; }
 
     .news-section {
       max-width: 1180px;
@@ -883,7 +861,6 @@
       .news-grid { margin-top: 28px; }
       .news-card { padding: 24px 22px; }
       .gallery-grid { grid-template-columns: 1fr; margin-top: 28px; }
-      .gallery-item::after { opacity: 1; transform: none; }
       .character-grid { gap: 12px; margin-top: 28px; }
       .character-card h3 { font-size: 1.25rem; padding-block: 12px 14px; }
     }
