@@ -7,7 +7,8 @@
   <meta name="msapplication-TileColor" content="#031a3c">
   <meta name="msapplication-config" content="favicon/browserconfig.xml">
   <title>Moonbeam - Stories by Hari Blossom</title>
-  <meta name="description" content="Enter the magical world of Moonbeam - six beautifully illustrated dragon adventures by Hari Blossom.">
+  <meta name="description" content="Enter the magical world of Moonbeam - six beautifully illustrated dragon adventures by Hari Blossom. Buy Moonbeam - Stardust Serenade online as a downloadable digital book.">
+  <meta name="keywords" content="Moonbeam books, Hari Blossom, children's dragon books, Moonbeam Stardust Serenade, buy children's ebook">
 
   <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
@@ -15,6 +16,25 @@
   <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
   <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
   <link rel="manifest" href="favicon/manifest.json">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Moonbeam - Stardust Serenade",
+    "description": "A magical children's adventure about Moonbeam, a special dragon who breathes stardust.",
+    "image": "assets/book-1.jpg",
+    "brand": { "@type": "Brand", "name": "Moonbeam" },
+    "author": { "@type": "Person", "name": "Hari Blossom" },
+    "offers": {
+      "@type": "Offer",
+      "price": "1.99",
+      "priceCurrency": "GBP",
+      "availability": "https://schema.org/InStock",
+      "url": "https://payhip.com/buy?link=sQeAi"
+    }
+  }
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -448,6 +468,74 @@
       margin: 14px 0 6px;
     }
 
+    .shop-section {
+      padding: 76px 0;
+      background: radial-gradient(circle at 50% 15%, rgba(243,181,63,.08), transparent 38%);
+      border-top: 1px solid rgba(255,255,255,.07);
+    }
+
+    .shop-author { color: var(--gold-soft); font-weight: 700; }
+
+    .shop-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      margin-top: 34px;
+      align-items: stretch;
+    }
+
+    .shop-card {
+      display: grid;
+      grid-template-rows: auto 1fr;
+      min-width: 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(145deg, rgba(7,43,93,.72), rgba(3,26,60,.82));
+      box-shadow: var(--shadow);
+    }
+
+    .shop-cover-wrap { position: relative; padding: 22px 22px 0; }
+    .shop-cover {
+      width: min(100%, 250px);
+      aspect-ratio: .82;
+      margin: 0 auto;
+      object-fit: cover;
+      border: 1px solid rgba(255,211,116,.48);
+      border-radius: 7px;
+      box-shadow: 0 16px 32px rgba(0,0,0,.34);
+    }
+
+    .shop-status {
+      position: absolute;
+      top: 34px;
+      left: 10px;
+      padding: 7px 13px;
+      border: 1px solid var(--gold);
+      border-radius: 999px;
+      color: var(--navy-950);
+      background: var(--gold-soft);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 700;
+      box-shadow: 0 5px 15px rgba(0,0,0,.3);
+    }
+
+    .shop-status.coming { color: var(--cream); background: var(--navy-850); }
+    .shop-card-body { display: flex; flex-direction: column; padding: 22px; }
+    .shop-card h3 { margin: 0 0 5px; color: var(--gold-soft); font-family: "Cormorant Garamond", Georgia, serif; font-size: 1.55rem; line-height: 1.1; }
+    .shop-byline { margin: 0 0 14px; color: var(--muted); font-size: .9rem; }
+    .shop-description { margin: 0 0 18px; color: #eef4ff; line-height: 1.55; }
+    .shop-format { margin: auto 0 14px; font-weight: 700; }
+    .shop-format small { display: block; margin-top: 4px; color: var(--muted); font-weight: 400; }
+    .shop-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+    .shop-actions .button { flex: 1 1 130px; padding-inline: 14px; cursor: pointer; }
+    .buy-button { color: var(--navy-950); background: var(--gold); border-color: var(--gold-soft); box-shadow: 0 8px 22px rgba(243,181,63,.2); }
+    .buy-button:hover { color: var(--navy-950); background: var(--gold-soft); }
+    .checkout-note { margin: 11px 0 0; color: var(--muted); font-size: .76rem; line-height: 1.4; text-align: center; }
+    .coming-note { margin: auto 0 0; padding: 11px; border: 1px solid rgba(255,211,116,.28); border-radius: 12px; color: var(--gold-soft); text-align: center; font-weight: 700; }
+
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--gold-soft); outline-offset: 4px; }
+
     .feature-strip {
       margin-top: 14px;
       display: grid;
@@ -853,6 +941,7 @@
       .news-grid { grid-template-columns: 1fr; }
       .news-card:last-child { grid-column: auto; }
       .gallery-grid { gap: 16px; }
+      .shop-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
     @media (max-width: 640px) {
@@ -872,6 +961,8 @@
       .gallery-grid { grid-template-columns: 1fr; margin-top: 28px; }
       .character-grid { gap: 12px; margin-top: 28px; }
       .character-card h3 { font-size: 1.25rem; padding-block: 12px 14px; }
+      .shop-grid { grid-template-columns: 1fr; }
+      .shop-section { padding: 58px 0; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -901,6 +992,7 @@
         <nav class="site-nav" id="siteNav" aria-label="Primary navigation">
           <a class="active" href="#home">Home</a>
           <a href="#books">Books</a>
+          <a href="#shop">Shop</a>
           <a href="#characters">Characters</a>
           <a href="#about">About</a>
           <a href="#news">News</a>
@@ -1008,6 +1100,58 @@
               <div class="feature-icon" aria-hidden="true">★</div>
               <div><h3>For Dreamers</h3><p>Perfect for children who love adventure, magic and happy ever afters.</p></div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="shop-section" id="shop" data-section aria-labelledby="shop-heading">
+        <div class="container">
+          <h2 class="section-heading reveal" id="shop-heading">Moonbeam Bookshop</h2>
+          <p class="section-copy reveal">Discover the magical world of Moonbeam and join her on adventures filled with friendship, courage, kindness and a little bit of stardust. Moonbeam books are written by <span class="shop-author">Hari Blossom</span>.</p>
+
+          <div class="shop-grid">
+            <article class="shop-card reveal" data-book-card data-book-title="Moonbeam - Stardust Serenade" data-book-description="Meet Moonbeam, a very special dragon who doesn't breathe fire - she breathes magical stardust. Join her on her first enchanting adventure as she discovers how her unusual gift can bring a little light and happiness to the world around her.">
+              <div class="shop-cover-wrap">
+                <img class="shop-cover" src="assets/book-1.jpg" alt="Moonbeam - Stardust Serenade book cover" loading="lazy">
+                <span class="shop-status">Book One</span>
+              </div>
+              <div class="shop-card-body">
+                <h3>Moonbeam - Stardust Serenade</h3>
+                <p class="shop-byline">By Hari Blossom</p>
+                <p class="shop-description">Meet Moonbeam, a very special dragon who doesn't breathe fire - she breathes magical stardust. Join her on her first enchanting adventure as she discovers how her unusual gift can bring a little light and happiness to the world around her.</p>
+                <p class="shop-format">Digital Edition - £1.99<small>Downloadable digital book supplied as a PDF.</small></p>
+                <div class="shop-actions">
+                  <button class="button book-details" type="button" aria-label="Read more about Moonbeam - Stardust Serenade">Read More</button>
+                  <a class="button buy-button" href="https://payhip.com/buy?link=sQeAi" target="_blank" rel="noopener noreferrer" aria-label="Buy Moonbeam - Stardust Serenade eBook for £1.99">Buy eBook - £1.99</a>
+                </div>
+                <p class="checkout-note">Secure checkout and instant digital download powered by Payhip.</p>
+              </div>
+            </article>
+
+            <article class="shop-card reveal" data-book-card data-book-title="Moonbeam - A Tale of Two Special Dragons" data-book-description="When a terrible drought leaves a village’s crops dry and dying, Moonbeam meets Blaze. Together, the two dragons discover how friendship, teamwork and using their special talents for good can make a wonderful difference.">
+              <div class="shop-cover-wrap"><img class="shop-cover" src="assets/book-2.jpg" alt="Moonbeam - A Tale of Two Special Dragons book cover" loading="lazy"><span class="shop-status coming">Book Two</span></div>
+              <div class="shop-card-body"><h3>Moonbeam - A Tale of Two Special Dragons</h3><p class="shop-byline">By Hari Blossom</p><p class="shop-description">Moonbeam meets Blaze, a friendly dragon with a very different gift. Together they learn about friendship, teamwork and helping others.</p><div class="shop-actions"><button class="button book-details" type="button" aria-label="Read more about Moonbeam - A Tale of Two Special Dragons">Read More</button></div><p class="coming-note">Coming Soon</p></div>
+            </article>
+
+            <article class="shop-card reveal" data-book-card data-book-title="Moonbeam and the Quest for the Mystical Healer" data-book-description="When Moonbeam discovers a young girl who has fallen terribly ill, she turns to Willow, a wise and gentle dragon with a special gift for healing. They learn that magic grows greater through friendship and kindness.">
+              <div class="shop-cover-wrap"><img class="shop-cover" src="assets/book-3.jpg" alt="Moonbeam's Quest to Find the Mystical Dragon Healer Who Could Save the Girl book cover" loading="lazy"><span class="shop-status coming">Book Three</span></div>
+              <div class="shop-card-body"><h3>Moonbeam's Quest to Find the Mystical Dragon Healer Who Could Save the Girl</h3><p class="shop-byline">By Hari Blossom</p><p class="shop-description">Moonbeam seeks the help of Willow, a wise and gentle healer dragon, on a journey filled with friendship and kindness.</p><div class="shop-actions"><button class="button book-details" type="button" aria-label="Read more about Book Three">Read More</button></div><p class="coming-note">Coming Soon</p></div>
+            </article>
+
+            <article class="shop-card reveal" data-book-card data-book-title="Moonbeam and Flashwing's Timeless Journey" data-book-description="Moonbeam reunites with Flashwing and sets off across forests, rivers and out to sea. Together, they discover that true friendship makes every adventure brighter and every challenge easier to face.">
+              <div class="shop-cover-wrap"><img class="shop-cover" src="assets/book-4.jpg" alt="A Stitch in Time - Flashwing's Journey book cover" loading="lazy"><span class="shop-status coming">Book Four</span></div>
+              <div class="shop-card-body"><h3>A Stitch in Time - Flashwing's Journey</h3><p class="shop-byline">By Hari Blossom</p><p class="shop-description">Moonbeam and Flashwing journey across forests, rivers and the sea, learning how courage and friendship brighten every adventure.</p><div class="shop-actions"><button class="button book-details" type="button" aria-label="Read more about Book Four">Read More</button></div><p class="coming-note">Coming Soon</p></div>
+            </article>
+
+            <article class="shop-card reveal" data-book-card data-book-title="Moonbeam and the First Snowfall with Shard" data-book-description="On a dark winter night, Moonbeam meets Shard, a magical Ice Phoenix. Together they bring shimmering stardust, enchanted snowfall, light and comfort to the village below.">
+              <div class="shop-cover-wrap"><img class="shop-cover" src="assets/book-5.jpg" alt="First Snowfall of Shard book cover" loading="lazy"><span class="shop-status coming">Book Five</span></div>
+              <div class="shop-card-body"><h3>First Snowfall of Shard</h3><p class="shop-byline">By Hari Blossom</p><p class="shop-description">Moonbeam meets Shard, a magical Ice Phoenix, in a heartwarming adventure about friendship, healing and bringing people together.</p><div class="shop-actions"><button class="button book-details" type="button" aria-label="Read more about Book Five">Read More</button></div><p class="coming-note">Coming Soon</p></div>
+            </article>
+
+            <article class="shop-card reveal" data-book-card data-book-title="Moonbeam and Rainwing: The Colourful Scales" data-book-description="Moonbeam meets Rainwing, a dragon with magical colour-changing scales. When danger appears, they combine their magic in a story about bravery, friendship and standing together.">
+              <div class="shop-cover-wrap"><img class="shop-cover" src="assets/book-6.jpg" alt="The Dragon with the Colourful Tail book cover" loading="lazy"><span class="shop-status coming">Book Six</span></div>
+              <div class="shop-card-body"><h3>The Dragon with the Colourful Tail</h3><p class="shop-byline">By Hari Blossom</p><p class="shop-description">Moonbeam and Rainwing combine their sparkling magic in an adventure about bravery, friendship and standing together.</p><div class="shop-actions"><button class="button book-details" type="button" aria-label="Read more about Book Six">Read More</button></div><p class="coming-note">Coming Soon</p></div>
+            </article>
           </div>
         </div>
       </section>
