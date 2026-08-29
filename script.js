@@ -93,9 +93,8 @@
   stars.appendChild(fragment);
 
   // Book preview dialog. Replace this with links to individual book pages later if preferred.
-  document.querySelectorAll('.book-card').forEach(card => {
-    const cover = card.querySelector('.book-cover');
-    cover.addEventListener('click', () => {
+  document.querySelectorAll('.book-card, [data-book-card]').forEach(card => {
+    card.querySelectorAll('.book-cover, .book-details').forEach(trigger => trigger.addEventListener('click', () => {
       dialogTitle.textContent = card.dataset.bookTitle;
       const paragraphs = (card.dataset.bookDescription || defaultBookDescription).split('\n\n');
       dialogDescription.replaceChildren(...paragraphs.map(text => {
@@ -106,7 +105,7 @@
       if (typeof dialog.showModal === 'function') {
         dialog.showModal();
       }
-    });
+    }));
   });
 
   dialogClose.addEventListener('click', () => dialog.close());
